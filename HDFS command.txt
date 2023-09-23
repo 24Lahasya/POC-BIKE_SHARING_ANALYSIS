@@ -1,0 +1,92 @@
+lahasya@DESKTOP-0B2K82C:~$ sudo su - hadoop
+[sudo] password for lahasya:
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls
+Found 5 items
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 14:06 BikeData
+-rw-r--r--   1 hadoop supergroup     365407 2023-09-22 11:24 bikesharing_data.csv
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 18:50 textdata
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 14:22 time_analysis_output
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 12:46 tipdata
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /
+Found 5 items
+drwxr-xr-x   - hadoop supergroup          0 2023-09-20 19:42 /bit
+drwxrwxrwx   - hadoop supergroup          0 2023-09-21 12:15 /test
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 14:12 /time_analysis_output
+drwxrwxr-x   - hadoop supergroup          0 2023-09-21 12:46 /tmp
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 12:46 /user
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /user/hadoop
+Found 5 items
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 14:06 /user/hadoop/BikeData
+-rw-r--r--   1 hadoop supergroup     365407 2023-09-22 11:24 /user/hadoop/bikesharing_data.csv
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 18:50 /user/hadoop/textdata
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 14:22 /user/hadoop/time_analysis_output
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 12:46 /user/hadoop/tipdata
+
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /user/hadoop
+Found 4 items
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 14:06 /user/hadoop/BikeData
+-rw-r--r--   1 hadoop supergroup     365407 2023-09-22 11:24 /user/hadoop/bikesharing_data.csv
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 18:50 /user/hadoop/textdata
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 12:46 /user/hadoop/tipdata
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /user/hive
+Found 1 items
+drwxrwxr-x   - hadoop supergroup          0 2023-09-22 14:30 /user/hive/warehouse
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -mkdir /time_analysis
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /time_analysis
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -mkdir /station_analysis
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -mkdir /user_demographics
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls
+Found 4 items
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 14:06 BikeData
+-rw-r--r--   1 hadoop supergroup     365407 2023-09-22 11:24 bikesharing_data.csv
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 18:50 textdata
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 12:46 tipdata
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /
+Found 8 items
+drwxr-xr-x   - hadoop supergroup          0 2023-09-20 19:42 /bit
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 18:16 /station_analysis
+drwxrwxrwx   - hadoop supergroup          0 2023-09-21 12:15 /test
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 18:15 /time_analysis
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 14:12 /time_analysis_output
+drwxrwxr-x   - hadoop supergroup          0 2023-09-21 12:46 /tmp
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 12:46 /user
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 18:17 /user_demographics
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /
+Found 7 items
+drwxr-xr-x   - hadoop supergroup          0 2023-09-20 19:42 /bit
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 18:16 /station_analysis
+drwxrwxrwx   - hadoop supergroup          0 2023-09-21 12:15 /test
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 18:15 /time_analysis
+drwxrwxr-x   - hadoop supergroup          0 2023-09-21 12:46 /tmp
+drwxr-xr-x   - hadoop supergroup          0 2023-09-21 12:46 /user
+drwxr-xr-x   - hadoop supergroup          0 2023-09-22 18:17 /user_demographics
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /time_analysis
+Found 2 items
+-rw-r--r--   3 hadoop supergroup          0 2023-09-22 18:19 /time_analysis/_SUCCESS
+-rw-r--r--   3 hadoop supergroup        182 2023-09-22 18:19 /time_analysis/part-00000-ee685a72-a3c2-4ebb-87a5-6c76d764bd8c-c000.csv
+Found 2 items
+-rw-r--r--   3 hadoop supergroup          0 2023-09-22 18:19 /time_analysis/_SUCCESS
+-rw-r--r--   3 hadoop supergroup        182 2023-09-22 18:19 /time_analysis/part-00000-ee685a72-a3c2-4ebb-87a5-6c76d764bd8c-c000.csv
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /station_analysis
+Found 2 items
+-rw-r--r--   3 hadoop supergroup          0 2023-09-22 18:19 /station_analysis/_SUCCESS
+-rw-r--r--   3 hadoop supergroup       7477 2023-09-22 18:19 /station_analysis/part-00000-4a7b16c5-b97b-44ac-ad2e-f24d38ab033e-c000.csv
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /user_demographics
+Found 2 items
+-rw-r--r--   3 hadoop supergroup          0 2023-09-22 18:20 /user_demographics/_SUCCESS
+-rw-r--r--   3 hadoop supergroup         70 2023-09-22 18:20 /user_demographics/part-00000-776fae33-4240-4c1f-aa81-3f3e25469f1a-c000.csv
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /final_bikedata.csv
+ls: `/final_bikedata.csv': No such file or directory
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -mkdir /final_bikedata.csv
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /final_bikedata.csv
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -mkdir /output/final_bikedata.csv
+mkdir: `hdfs://localhost:9000/output': No such file or directory
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -mkdir /final_bikedata.csv
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /final_bikedata.csv
+Found 2 items
+-rw-r--r--   3 hadoop supergroup          0 2023-09-22 19:12 /final_bikedata.csv/_SUCCESS
+-rw-r--r--   3 hadoop supergroup     348206 2023-09-22 19:12 /final_bikedata.csv/part-00000-6733422e-a52c-4d83-b681-0fd113067cdd-c000.csv
+hadoop@DESKTOP-0B2K82C:~$ hadoop fs -ls /final_bikedata.csv
+Found 2 items
+-rw-r--r--   3 hadoop supergroup          0 2023-09-22 19:12 /final_bikedata.csv/_SUCCESS
+-rw-r--r--   3 hadoop superg
