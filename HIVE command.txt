@@ -1,0 +1,155 @@
+lahasya@DESKTOP-0B2K82C:~$ sudo su - hadoop
+[sudo] password for lahasya:
+hadoop@DESKTOP-0B2K82C:~$ hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/hadoop/apache-hive-3.1.2-bin/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/hadoop/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Hive Session ID = 7f423386-a13a-4fe2-bc43-3a989aae09af
+
+Logging initialized using configuration in jar:file:/home/hadoop/apache-hive-3.1.2-bin/lib/hive-common-3.1.2.jar!/hive-log4j2.properties Async: true
+Hive Session ID = 6bde50a0-ffe1-4b9e-9973-8b2c48d7ddbb
+Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+hive> show databases;
+OK
+default
+temp
+test
+textd
+Time taken: 0.594 seconds, Fetched: 5 row(s)
+hive> create database bikesharing;
+OK
+Time taken: 0.050 seconds
+hive> use Bikesharing;
+OK
+Time taken: 0.041 seconds
+hive> CREATE TABLE BikeData (trip_id int ,year int,month int,week int, day int,hour int,usertype string,gender string,starttime timestamp, stoptime timestamp,tripduration float,temperature float,events string,from_station_id int,from_station_name string,latitude_start float,longitude_start float,dpcapacity_start int, to_station_id int,to_station_name string,latitude_end float, longitude_end float,dpcapacity_end int)
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > STORED AS TEXTFILE;
+OK
+Time taken: 1.732 seconds
+hive> show tables;
+OK
+bikedata
+Time taken: 0.057 seconds, Fetched: 1 row(s)
+hive> select * from BikeData limit 5;
+OK
+Time taken: 1.98 seconds
+hive> LOAD DATA INPATH '/user/hadoop/BikeData/part-m-00000' INTO TABLE bikedata;
+Loading data to table bikesharing.bikedata
+OK
+Time taken: 1.343 seconds
+hive> select * from bikedata limit 5;
+OK
+1873697 2016    5       22      4       8       Subscriber      Male    2016-05-30 08:52:00     2016-05-30 09:09:00     16.5    9.99    cloudy 48       Larrabee St & Kingsbury St      9.99    -87.64  27      286     Franklin St & Quincy St 41.88   -87.63  23
+1873698 2016    5       22      4       8       Subscriber      Male    2016-05-30 08:52:00     2016-05-30 08:59:00     6.6     9.99    cloudy 134      Peoria St & Jackson Blvd        9.99    -87.65  19      66      Clinton St & Lake St    41.89   -87.64  19
+1873701 2016    5       22      4       8       Subscriber      Male    2016-05-30 08:52:00     2016-05-30 09:07:00     14.6    9.99    cloudy 113      Bissell St & Armitage Ave       9.99    -87.65  15      74      Kingsbury St & Erie St  41.89   -87.64  23
+1873704 2015    5       22      4       8       Subscriber      Male    2015-05-30 08:53:00     2015-05-30 09:14:00     20.9    9.99    cloudy 141      Clark St & Lincoln Ave  9.99    -87.63  23      73      Jefferson St & Monroe St        41.88   -87.64  19
+1873706 2015    5       22      4       8       Subscriber      Male    2015-05-30 08:53:00     2015-05-30 09:01:00     8.2     9.99    cloudy 100      Orleans St & Merchandise Mart Plaza     9.99    -87.64  23      195     Columbus Dr & Randolph St       41.88   -87.62  31
+Time taken: 0.292 seconds, Fetched: 5 row(s)
+hive>hive> show databases;
+OK
+bikesharing
+default
+temp
+test
+textd
+Time taken: 4.81 seconds, Fetched: 5 row(s)
+hive> create database transformed;
+OK
+Time taken: 12.01 seconds
+hive> use transformed;
+OK
+Time taken: 0.399 seconds
+hive> create table time_analysis(year int ,month int,hour int,trip_count int)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' TBLPROPERTIES("skip.header.line.count"="1");
+OK
+Time taken: 0.57 seconds
+hive> load data  inpath '/time_analysis/part-00000-ee685a72-a3c2-4ebb-87a5-6c76d764bd8c-c000.csv' into table time_analysis;
+Loading data to table transformed.time_analysis
+OK
+Time taken: 5.68 seconds
+hive> select * from time_analysis;
+OK
+2014    5       10      84
+2014    5       11      266
+2014    5       12      146
+2014    6       23      3
+2015    5       8       81
+2015    5       9       309
+2015    5       10      110
+2016    5       8       3
+2016    7       8       309
+2016    7       9       188
+2017    9       8       210
+2017    9       9       290
+Time taken: 1.95 seconds, Fetched: 12 row(s)
+hive> create table station_analysis(from_station_name string,trip_count int)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' TBLPROPERTIES("skip.header.line.count"="1");
+OK
+Time taken: 0.469 seconds
+hive> load data  inpath '/station_analysis/part-00000-4a7b16c5-b97b-44ac-ad2e-f24d38ab033e-c000.csv' into table station_analysis;
+Loading data to table transformed.station_analysis
+OK
+Time taken: 1.43 seconds
+hive> select * from station_analysis limit 10;
+OK
+Clinton St & Washington Blvd    76
+Canal St & Madison St   40
+Canal St & Adams St     40
+Canal St & Jackson Blvd 33
+Franklin St & Arcade Pl 27
+Clinton St & Madison St 24
+Dearborn St & Monroe St 23
+Orleans St & Merchandise Mart Plaza     23
+Columbus Dr & Randolph St       23
+Peoria St & Jackson Blvd        22
+Time taken: 1.198 seconds, Fetched: 10 row(s)
+hive> create table user_demographics(usertype string,gender string,trip_count int)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' TBLPROPERTIES("skip.header.line.count"="1");
+OK
+Time taken: 0.44 seconds
+hive> load data  inpath '/user_demographics/part-00000-776fae33-4240-4c1f-aa81-3f3e25469f1a-c000.csv' into table user_demographics;
+Loading data to table transformed.user_demographics
+OK
+Time taken: 1.328 seconds
+hive> select * from user_demographics;
+OK
+Subscriber      Male    1517
+Subscriber      Female  482
+Time taken: 0.928 seconds, Fetched: 2 row(s)
+hive> show databases;
+OK
+bikesharing
+default
+temp
+test
+textd
+transformed
+Time taken: 1.781 seconds, Fetched: 6 row(s)
+hive> create database final_output;
+OK
+Time taken: 1.53 seconds
+hive> use final_output;
+OK
+Time taken: 0.709 seconds
+hive> CREATE TABLE IF NOT EXISTS bikesharing.final_bikedata (trip_id INT, year INT, month INT,week INT,day INT,hour INT,usertype STRING,gender STRING,tripduration FLOAT,temperature FLOAT,events STRING,from_station_id INT,from_station_name STRING,latitude_start FLOAT,longitude_start FLOAT,dpcapacity_start INT,to_station_id INT,to_station_name STRING,latitude_end FLOAT,longitude_end FLOAT,dpcapacity_end INT,start_time TIMESTAMP,end_time TIMESTAMP,start_date DATE,end_date DATE)
+    > ROW FORMAT DELIMITED
+    > FIELDS TERMINATED BY ','
+    > tblproperties("skip.header.line.count"="1");
+OK
+Time taken: 2.839 seconds
+hive> load data inpath '/final_bikedata.csv/part-00000-6733422e-a52c-4d83-b681-0fd113067cdd-c000.csv' into table bikesharing.final_bikedata;
+Loading data to table bikesharing.final_bikedata
+OK
+Time taken: 10.631 seconds
+hive> select * from bikesharing.final_bikedata limit 5;
+OK
+1873697 2016    5       22      4       8       Subscriber      Male    2016-05-30 08:52:00     2016-05-30 09:09:00     16.5    9.99    cloudy 48       Larrabee St & Kingsbury St      9.99    -87.64  27      286     Franklin St & Quincy St 41.88   -87.63  23
+1873698 2016    5       22      4       8       Subscriber      Male    2016-05-30 08:52:00     2016-05-30 08:59:00     6.6     9.99    cloudy 134      Peoria St & Jackson Blvd        9.99    -87.65  19      66      Clinton St & Lake St    41.89   -87.64  19
+1873701 2016    5       22      4       8       Subscriber      Male    2016-05-30 08:52:00     2016-05-30 09:07:00     14.6    9.99    cloudy 113      Bissell St & Armitage Ave       9.99    -87.65  15      74      Kingsbury St & Erie St  41.89   -87.64  23
+1873704 2015    5       22      4       8       Subscriber      Male    2015-05-30 08:53:00     2015-05-30 09:14:00     20.9    9.99    cloudy 141      Clark St & Lincoln Ave  9.99    -87.63  23      73      Jefferson St & Monroe St        41.88   -87.64  19
+1873706 2015    5       22      4       8       Subscriber      Male    2015-05-30 08:53:00     2015-05-30 09:01:00     8.2     9.99    cloudy 100      Orleans St & Merchandise Mart Plaza     9.99    -87.64  23      195     Columbus Dr & Randolph St       41.88   -87.62  31
+Time taken: 0.292 seconds, Fetched: 5 row(s)
