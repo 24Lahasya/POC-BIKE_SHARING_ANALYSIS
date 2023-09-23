@@ -1,0 +1,493 @@
+lahasya@DESKTOP-0B2K82C:~$ sudo su - hadoop
+[sudo] password for lahasya:
+hadoop@DESKTOP-0B2K82C:~$ pyspark
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+23/09/22 17:53:26 WARN Utils: Your hostname, DESKTOP-0B2K82C resolves to a loopback address: 127.0.1.1; using 172.26.215.61 instead (on interface eth0)
+23/09/22 17:53:26 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.wm.default.pool.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.task.scheduler.preempt.independent does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.output.format.arrow does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.tez.llap.min.reducer.per.executor does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.arrow.root.allocator.limit does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.use.checked.expressions does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.tez.dynamic.semijoin.reduction.for.mapjoin does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.complex.types.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.wm.worker.threads does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.partitions.dump.parallelism does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.uri.selection does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.strict.checks.no.partition.filter does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.tez.dynamic.semijoin.reduction.for.dpp.factor does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.stats.filter.in.min.ratio does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.client.cache.initial.capacity does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.stats.ndv.estimate.percent does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.webui.cors.allowed.methods does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.optimize.joinreducededuplication does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.client.cache.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.stats.fetch.bitvector does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.disable.unsafe.external.table.operations does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.materializedview.rewriting.incremental does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.materializedviews.registry.impl does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.event.db.notification.api.auth does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.exec.orc.delta.streaming.optimizations.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.stats.ndv.algo does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.spark.job.max.tasks does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.msck.repair.batch.max.retries does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.prewarm.spark.timeout does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.optimize.update.table.properties.from.serde.list does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.plugin.client.num.threads does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.test.bucketcodec.version does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.reexecution.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.materializedview.rewriting.time.window does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.reexecution.stats.cache.batch.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.webui.cors.allowed.headers does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.join.inner.residual does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.active.passive.ha.enable does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.trace.always.dump does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.reexecution.stats.persist.scope does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.mm.allow.originals does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.compactor.compact.insert.only does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.txn.xlock.iow does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.spark.rsc.conf.list does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.cache.defaultfs.only.native.fileid does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.spark.optimize.shuffle.serde does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.testing.remove.logs does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.distcp.privileged.doAs does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.strict.checks.orderby.no.limit does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.client.cache.expiry.time does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.allocator.defrag.headroom does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.notification.event.consumers does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.input.format.supports.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.client.cache.max.capacity does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.dumpdir.clean.freq does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.spark.use.ts.stats.for.mapjoin does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.dump.include.acid.tables does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.webui.use.pam does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.reexecution.max.count does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.share.object.pools does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.optimize.update.table.properties.from.serde does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.service.metrics.codahale.reporter.classes does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.tez.session.events.print.summary does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.vrb.queue.limit.base does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.mm.avoid.s3.globstatus does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.replica.functions.root.dir does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.results.cache.max.entry.lifetime does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.limit.connections.per.user does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.thrift.http.compression.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.execution.ptf.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.optimize.shared.work.extended does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.row.identifier.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.reexecution.always.collect.operator.stats does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.dumpdir.ttl does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.local.time.zone does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.tez.wm.am.registry.timeout does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.active.passive.ha.registry.namespace does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.create.as.insert.only does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.mapjoin.memory.oversubscribe.factor does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.arrow.batch.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.notification.sequence.lock.retry.sleep.interval does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.approx.max.load.tasks does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.results.cache.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.legacy.schema.for.all.serdes does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.tez.dag.status.check.interval does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.druid.bitmap.type does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.spark.dynamic.partition.pruning.map.join.only does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.memory.oversubscription.max.executors.per.query does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.trace.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.plugin.rpc.num.handlers does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.wm.allow.any.pool.via.jdbc does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.groupby.complex.types.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.avro.timestamp.skip.conversion does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.results.cache.nontransactional.tables.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.stats.correlated.multi.key.joins does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.db.type does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.streaming.auto.flush.check.interval.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.zookeeper.connection.timeout does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.reexecution.strategies does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.limit.connections.per.user.ipaddress does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.mapjoin.memory.monitor.check.interval does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.optimize.shared.work does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.stats.estimate does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.allocator.discard.method does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.tez.cartesian-product.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.notification.sequence.lock.max.retries does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.heap.memory.monitor.usage.threshold does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.privilege.synchronizer.interval does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.adaptor.suppress.evaluate.exceptions does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.materializedview.rebuild.incremental does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.results.cache.max.entry.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.spark.stage.max.tasks does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.testing.short.logs does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.streaming.auto.flush.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.spark.explain.user does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.operation.log.cleanup.delay does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.dump.metadata.only does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.optimize.countdistinct does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.auto.convert.join.shuffle.max.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.plugin.acl does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.schema.info.class does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.tez.queue.access.check does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.external.splits.temp.table.storage.format does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.row.wrapper.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.constraint.notnull.enforce does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.cli.print.escape.crlf does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.trigger.validation.interval does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.webui.cors.allowed.origins does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.limit.connections.per.ipaddress does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.external.splits.order.by.force.single.split does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.metastore.client.cache.stats.enabled does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.notification.event.poll.interval does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.transactional.concatenate.noblock does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.materializedview.rewriting.strategy does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.if.expr.mode does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.exim.test.mode does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.results.cache.directory does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.results.cache.wait.for.pending.results does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.remove.orderby.in.subquery does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.tez.bmj.use.subcache does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.vrb.queue.limit.min does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.wm.pool.metrics does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.add.raw.reserved.namespace does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.resource.use.hdfs.location does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.stats.num.nulls.estimate.percent does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.acid does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.zk.sm.session.timeout does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.ptf.max.memory.buffering.batch.count does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.task.scheduler.am.registry does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.druid.overlord.address.default does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.optimize.remove.sq_count_check does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.server2.webui.enable.cors does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.vectorized.row.serde.inputformat.excludes does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.reexecution.stats.cache.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.combine.equivalent.work.optimization does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.lock.query.string.max.length does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.llap.io.track.cache.usage does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.use.orc.codec.pool does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.query.results.cache.max.size does not exist
+23/09/22 17:53:30 WARN HiveConf: HiveConf of name hive.repl.bootstrap.dump.open.txn.timeout does not exist
+23/09/22 17:53:31 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 3.4.0
+      /_/
+
+Using Python version 3.10.12 (main, Jun 11 2023 05:26:28)
+Spark context Web UI available at http://172.26.215.61:4040
+Spark context available as 'sc' (master = local[*], app id = local-1695385414903).
+SparkSession available as 'spark'.
+>>> bikedf = spark.sql("SELECT * FROM bikesharing.bikedata")
+>>> bikedf.show(5)
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+|1873697|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:09:00|        16.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          286|Franklin St & Qui...|       41.88|       -87.63|            23|
+|1873698|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 08:59:00|         6.6|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|
+|1873701|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:07:00|        14.6|       9.99|cloudy|            113|Bissell St & Armi...|          9.99|         -87.65|              15|           74|Kingsbury St & Er...|       41.89|       -87.64|            23|
+|1873704|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:14:00|        20.9|       9.99|cloudy|            141|Clark St & Lincol...|          9.99|         -87.63|              23|           73|Jefferson St & Mo...|       41.88|       -87.64|            19|
+|1873706|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.2|       9.99|cloudy|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+only showing top 5 rows
+
+>>> cleanedDF = bikedf.dropDuplicates()
+>>> cleanedDF.show()
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+|1873811|2015|    5|  22|  4|   8|Subscriber|Female|2015-05-30 08:58:00|2015-05-30 09:25:00|        26.4|       9.99|cloudy|            214|Damen Ave & Grand...|          9.99|         -87.68|              15|           68|Clinton St & Tild...|       41.88|       -87.64|            23|
+|1873825|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:59:00|2015-05-30 09:10:00|        11.2|       9.99|cloudy|             56|Desplaines St & K...|          9.99|         -87.64|              19|          283|LaSalle St & Jack...|       41.88|       -87.63|            23|
+|1874162|2015|    5|  22|  4|   9|Subscriber|Female|2015-05-30 09:25:00|2015-05-30 09:39:00|        13.9|       9.99| clear|            232|Pine Grove Ave & ...|          9.99|         -87.65|              23|           94|Clark St & Armita...|       41.92|       -87.64|            19|
+|1874555|2015|    5|  22|  4|  10|Subscriber|  Male|2015-05-30 10:12:00|2015-05-30 10:21:00|         9.8|       9.99| clear|            199|Wabash Ave & Gran...|          9.99|         -87.63|              15|          283|LaSalle St & Jack...|       41.88|       -87.63|            23|
+|1875063|2014|    5|  22|  4|  11|Subscriber|Female|2014-05-30 11:13:00|2014-05-30 11:26:00|        13.7|       9.99| clear|             91|Clinton St & Wash...|          9.99|         -87.64|              31|           33|State St & Van Bu...|       41.88|       -87.63|            27|
+|1875139|2014|    5|  22|  4|  11|Subscriber|  Male|2014-05-30 11:20:00|2014-05-30 11:28:00|         7.6|       9.99| clear|            115|Sheffield Ave & W...|          9.99|         -87.65|              23|          232|Pine Grove Ave & ...|       41.95|       -87.65|            23|
+|1875653|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:03:00|2014-05-30 12:11:00|         7.5|       9.99| clear|             80|Aberdeen St & Mad...|          9.99|         -87.65|              19|           19|Loomis St & Taylo...|       41.87|       -87.66|            15|
+|2587650|2016|    7|  29|  1|   8|Subscriber|  Male|2016-07-15 08:47:00|2016-07-15 08:52:00|         4.7|       9.99|cloudy|            138|Clybourn Ave & Di...|          9.99|         -87.64|              15|           46|Wells St & Walton St|        41.9|       -87.63|            19|
+|3618013|2017|    9|  38|  2|   9|Subscriber|  Male|2017-09-17 09:19:00|2017-09-17 09:23:00|         4.1|       9.99|cloudy|             58|Marshfield Ave & ...|          9.99|         -87.67|              15|           16| Wood St & North Ave|       41.91|       -87.67|            15|
+|1873947|2015|    5|  22|  4|   9|Subscriber|Female|2015-05-30 09:08:00|2015-05-30 09:10:00|         2.4|       9.99| clear|            111|Sedgwick St & Hur...|          9.99|         -87.64|              19|           31|Franklin St & Chi...|        41.9|       -87.64|            23|
+|1874071|2015|    5|  22|  4|   9|Subscriber|  Male|2015-05-30 09:17:00|2015-05-30 09:22:00|         4.7|       9.99| clear|             15|Racine Ave & 18th St|          9.99|         -87.66|              15|          205|Paulina St & 18th St|       41.86|       -87.67|            15|
+|1875091|2014|    5|  22|  4|  11|Subscriber|  Male|2014-05-30 11:15:00|2014-05-30 11:38:00|        22.7|       9.99| clear|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          307|Southport Ave & C...|       41.92|       -87.66|            15|
+|2587553|2016|    7|  29|  1|   8|Subscriber|  Male|2016-07-15 08:43:00|2016-07-15 08:53:00|        10.1|       9.99|cloudy|            174|Canal St & Madiso...|          9.99|         -87.64|              23|           43|Michigan Ave & Wa...|       41.88|       -87.62|            43|
+|2587927|2016|    7|  29|  1|   9|Subscriber|Female|2016-07-15 09:01:00|2016-07-15 09:15:00|        13.8|       9.99|cloudy|            169|Canal St & Harris...|          9.99|         -87.64|              15|          317| Wood St & Taylor St|       41.87|       -87.67|            15|
+|2588010|2016|    7|  29|  1|   9|Subscriber|  Male|2016-07-15 09:08:00|2016-07-15 09:21:00|        12.5|       9.99|cloudy|            192| Canal St & Adams St|          9.99|         -87.64|              27|          199|Wabash Ave & Gran...|       41.89|       -87.63|            15|
+|2588115|2016|    7|  29|  1|   9|Subscriber|  Male|2016-07-15 09:16:00|2016-07-15 09:20:00|         3.9|       9.99|cloudy|            196|Cityfront Plaza D...|          9.99|         -87.62|              19|           99|Lake Shore Dr & O...|       41.89|       -87.61|            19|
+|3617517|2017|    9|  38|  2|   8|Subscriber|  Male|2017-09-17 08:50:00|2017-09-17 09:05:00|        14.0|       9.99|cloudy|            338|Calumet Ave & 18t...|          9.99|         -87.62|              15|           37|Dearborn St & Ada...|       41.88|       -87.63|            19|
+|1874331|2015|    5|  22|  4|   9|Subscriber|Female|2015-05-30 09:41:00|2015-05-30 10:07:00|        25.7|       9.99| clear|            254|Pine Grove Ave & ...|          9.99|         -87.65|              15|          177| Theater on the Lake|       41.93|       -87.63|            15|
+|1874388|2015|    5|  22|  4|   9|Subscriber|  Male|2015-05-30 09:47:00|2015-05-30 09:57:00|         9.8|       9.99| clear|            289|Wells St & Concor...|          9.99|         -87.63|              19|          100|Orleans St & Merc...|       41.89|       -87.64|            23|
+|1875110|2014|    5|  22|  4|  11|Subscriber|  Male|2014-05-30 11:17:00|2014-05-30 11:38:00|        21.3|       9.99| clear|            195|Columbus Dr & Ran...|          9.99|         -87.62|              31|           44|State St & Randol...|       41.88|       -87.63|            27|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+only showing top 20 rows
+
+>>> from pyspark.sql.functions import col, sum
+>>> nullCounts = bikedf.select([sum(col(c).isNull().cast("int")).alias(c) for c in bikedf.columns])
+>>> nullCounts.show()
++-------+----+-----+----+---+----+--------+------+---------+--------+------------+-----------+------+---------------+-----------------+--------------+---------------+----------------+-------------+---------------+------------+-------------+--------------+
+|trip_id|year|month|week|day|hour|usertype|gender|starttime|stoptime|tripduration|temperature|events|from_station_id|from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|to_station_name|latitude_end|longitude_end|dpcapacity_end|
++-------+----+-----+----+---+----+--------+------+---------+--------+------------+-----------+------+---------------+-----------------+--------------+---------------+----------------+-------------+---------------+------------+-------------+--------------+
+|      0|   0|    0|   0|  0|   0|       0|     0|        0|       0|           0|          0|     0|              0|                0|
+    0|              0|               0|            0|              0|           0|            0|             0|
++-------+----+-----+----+---+----+--------+------+---------+--------+------------+-----------+------+---------------+-----------------+--------------+---------------+----------------+-------------+---------------+------------+-------------+--------------+
+
+>>> bikedf.createOrReplaceTempView("bike_data")
+>>> time_analysis = spark.sql("""SELECT year, month, hour, COUNT(*) AS trip_count FROM bike_data GROUP BY year, month, hour ORDER BY year, month, hour""")
+>>> time_analysis.show()
++----+-----+----+----------+
+|year|month|hour|trip_count|
++----+-----+----+----------+
+|2014|    5|  10|        84|
+|2014|    5|  11|       266|
+|2014|    5|  12|       146|
+|2014|    6|  23|         3|
+|2015|    5|   8|        81|
+|2015|    5|   9|       309|
+|2015|    5|  10|       110|
+|2016|    5|   8|         3|
+|2016|    7|   8|       309|
+|2016|    7|   9|       188|
+|2017|    9|   8|       210|
+|2017|    9|   9|       290|
++----+-----+----+----------+
+
+>>> station_analysis = spark.sql("""SELECT from_station_name, COUNT(*) AS trip_count FROM bike_data GROUP BY from_station_name ORDER BY trip_count DESC""")
+>>> station_analysis.show()
++--------------------+----------+
+|   from_station_name|trip_count|
++--------------------+----------+
+|Clinton St & Wash...|        76|
+|Canal St & Madiso...|        40|
+| Canal St & Adams St|        40|
+|Canal St & Jackso...|        33|
+|Franklin St & Arc...|        27|
+|Clinton St & Madi...|        24|
+|Dearborn St & Mon...|        23|
+|Orleans St & Merc...|        23|
+|Columbus Dr & Ran...|        23|
+|Peoria St & Jacks...|        22|
+|Larrabee St & Kin...|        22|
+|  Daley Center Plaza|        21|
+|Canal St & Monroe St|        20|
+|Clinton St & Lake St|        20|
+|   Clark St & Elm St|        19|
+|Indiana Ave & Roo...|        19|
+|LaSalle St & Wash...|        19|
+|State St & Kinzie St|        18|
+|Jefferson St & Mo...|        18|
+|Franklin St & Qui...|        18|
++--------------------+----------+
+only showing top 20 rows
+
+>>> user_demographics = spark.sql("""SELECT usertype, gender, COUNT(*) AS trip_count FROM bike_data GROUP BY usertype, gender""")
+>>> user_demographics.show()
++----------+------+----------+
+|  usertype|gender|trip_count|
++----------+------+----------+
+|Subscriber|  Male|      1517|
+|Subscriber|Female|       482|
++----------+------+----------+
+
+>>> time_analysis.write.mode("overwrite").option("header",True).csv("hdfs://localhost:9000/time_analysis")
+>>> station_analysis.write.mode("overwrite").option("header",True).csv("hdfs://localhost:9000/station_analysis")
+>>> user_demographics.write.mode("overwrite").option("header",True).csv("hdfs://localhost:9000/user_demographics")
+>>> quantiles = bikedf.approxQuantile("tripduration", [0.25, 0.75], 0.0)
+>>> Q1 = quantiles[0]
+>>> Q3 = quantiles[1]
+>>> IQR = Q3 - Q1
+>>> lowerBound = Q1 - 1.5 * IQR
+>>> upperBound = Q3 + 1.5 * IQR
+>>> filteredData = bikedf.filter(col("tripduration").between(lowerBound, upperBound))
+>>> filteredData.show()
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+|1873697|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:09:00|        16.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          286|Franklin St & Qui...|       41.88|       -87.63|            23|
+|1873698|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 08:59:00|         6.6|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|
+|1873701|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:07:00|        14.6|       9.99|cloudy|            113|Bissell St & Armi...|          9.99|         -87.65|              15|           74|Kingsbury St & Er...|       41.89|       -87.64|            23|
+|1873704|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:14:00|        20.9|       9.99|cloudy|            141|Clark St & Lincol...|          9.99|         -87.63|              23|           73|Jefferson St & Mo...|       41.88|       -87.64|            19|
+|1873706|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.2|       9.99|cloudy|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|
+|1873707|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 08:58:00|         4.9|       9.99|cloudy|             47|State St & Kinzie St|          9.99|         -87.63|              19|          100|Orleans St & Merc...|       41.89|       -87.64|            23|
+|1873711|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:10:00|        17.5|       9.99|cloudy|             42|Wabash Ave & Cerm...|          9.99|         -87.63|              15|          283|LaSalle St & Jack...|       41.88|       -87.63|            23|
+|1873712|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:17:00|        24.1|       9.99|cloudy|            301|Clark St & Schill...|          9.99|         -87.63|              19|          264|Stetson Ave & Sou...|       41.89|       -87.62|            19|
+|1873713|2015|    5|  22|  4|   8|Subscriber|Female|2015-05-30 08:53:00|2015-05-30 09:08:00|        15.1|       9.99|cloudy|             29|Noble St & Milwau...|          9.99|         -87.66|              15|          191|Canal St & Monroe St|       41.88|       -87.64|            23|
+|1873715|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 08:58:00|         5.3|       9.99|cloudy|             21|Aberdeen St & Jac...|          9.99|         -87.65|              15|          320|Loomis St & Lexin...|       41.87|       -87.66|            15|
+|1873716|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 08:57:00|         3.9|       9.99|cloudy|            152|Lincoln Ave & Div...|          9.99|         -87.66|              15|           13|Wilton Ave & Dive...|       41.93|       -87.65|            19|
+|1873718|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:02:00|         8.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          173|Mies van der Rohe...|        41.9|       -87.62|            15|
+|1873720|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 08:57:00|         4.2|       9.99|cloudy|            326|Clark St & Leland...|          9.99|         -87.67|              11|          344|Wolcott Ave & Law...|       41.97|       -87.68|            15|
+|1873721|2015|    5|  22|  4|   8|Subscriber|Female|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.0|       9.99|cloudy|             19|Loomis St & Taylo...|          9.99|         -87.66|              15|          282|Halsted St & Maxw...|       41.86|       -87.65|            15|
+|1873722|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:18:00|        24.9|       9.99|cloudy|            305|Western Ave & Div...|          9.99|         -87.69|              15|           91|Clinton St & Wash...|       41.88|       -87.64|            31|
+|1873723|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:11:00|        18.0|       9.99|cloudy|            243|Lincoln Ave & Lea...|          9.99|         -87.68|              15|           87|Racine Ave & Full...|       41.93|       -87.66|            19|
+|1873727|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:09:00|        15.2|       9.99|cloudy|             75|Canal St & Jackso...|          9.99|         -87.64|              23|          119|Ashland Ave & Lak...|       41.89|       -87.67|            19|
+|1873728|2015|    5|  22|  4|   8|Subscriber|Female|2015-05-30 08:54:00|2015-05-30 09:05:00|        11.8|       9.99|cloudy|            232|Pine Grove Ave & ...|          9.99|         -87.65|              23|          154|Southport Ave & B...|       41.94|       -87.66|            15|
+|1873730|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:54:00|2015-05-30 08:59:00|         5.3|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           36|Franklin St & Jac...|       41.88|       -87.64|            31|
+|1873731|2015|    5|  22|  4|   8|Subscriber|Female|2015-05-30 08:54:00|2015-05-30 09:19:00|        25.2|       9.99|cloudy|            144|Larrabee St & Web...|          9.99|         -87.64|              15|           75|Canal St & Jackso...|       41.88|       -87.64|            23|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+
+only showing top 20 rows
+>>> from pyspark.sql.functions import col, date_format
+>>> starttime = filteredData.withColumn("start_time", date_format(col("starttime"), "HH:mm:ss"))
+>>> stoptime = filteredData.withColumn("end_time", date_format(col("stoptime"), "HH:mm:ss"))
+>>> filteredDataWithStartAndStopTime = filteredData.withColumn("start_time", date_format(col("starttime"), "HH:mm:ss")) \
+...                                               .withColumn("end_time", date_format(col("stoptime"), "HH:mm:ss"))
+>>> filteredDataWithStartAndStopTime.show(10)
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|start_time|end_time|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+
+|1873697|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:09:00|        16.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          286|Franklin St & Qui...|       41.88|       -87.63|            23|  08:52:00|09:09:00|
+|1873698|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 08:59:00|         6.6|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|  08:52:00|08:59:00|
+|1873701|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:07:00|        14.6|       9.99|cloudy|            113|Bissell St & Armi...|          9.99|         -87.65|              15|           74|Kingsbury St & Er...|       41.89|       -87.64|            23|  08:52:00|09:07:00|
+|1873704|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:14:00|        20.9|       9.99|cloudy|            141|Clark St & Lincol...|          9.99|         -87.63|              23|           73|Jefferson St & Mo...|       41.88|       -87.64|            19|  08:53:00|09:14:00|
+|1873706|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.2|       9.99|cloudy|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|  08:53:00|09:01:00|
+|1873707|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 08:58:00|         4.9|       9.99|cloudy|             47|State St & Kinzie St|          9.99|         -87.63|              19|          100|Orleans St & Merc...|       41.89|       -87.64|            23|  08:53:00|08:58:00|
+|1873711|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:10:00|        17.5|       9.99|cloudy|             42|Wabash Ave & Cerm...|          9.99|         -87.63|              15|          283|LaSalle St & Jack...|       41.88|       -87.63|            23|  08:53:00|09:10:00|
+|1873712|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:17:00|        24.1|       9.99|cloudy|            301|Clark St & Schill...|          9.99|         -87.63|              19|          264|Stetson Ave & Sou...|       41.89|       -87.62|            19|  08:53:00|09:17:00|
+|1873713|2015|    5|  22|  4|   8|Subscriber|Female|2015-05-30 08:53:00|2015-05-30 09:08:00|        15.1|       9.99|cloudy|             29|Noble St & Milwau...|          9.99|         -87.66|              15|          191|Canal St & Monroe St|       41.88|       -87.64|            23|  08:53:00|09:08:00|
+|1873715|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 08:58:00|         5.3|       9.99|cloudy|             21|Aberdeen St & Jac...|          9.99|         -87.65|              15|          320|Loomis St & Lexin...|       41.87|       -87.66|            15|  08:53:00|08:58:00|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+
+only showing top 10 rows
+
+>>> filteredcount = filteredDataWithStartAndStopTime.count()
+>>> cnt = filteredDataWithStartAndStopTime.count()
+>>> from pyspark.sql.functions import col, to_date
+>>> dfwithstartdate = filteredDataWithStartAndStopTime.withColumn("start_date", to_date(col("starttime")))
+>>> dfwithstart_enddate = dfwithstartdate.withColumn("end_date", to_date(col("stoptime")))
+>>> dfwithstartdate.show(10)
+23/09/22 19:01:19 WARN package: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|start_time|end_time|start_date|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+
+|1873697|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:09:00|        16.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          286|Franklin St & Qui...|       41.88|       -87.63|            23|  08:52:00|09:09:00|2016-05-30|
+|1873698|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 08:59:00|         6.6|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|  08:52:00|08:59:00|2016-05-30|
+|1873701|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:07:00|        14.6|       9.99|cloudy|            113|Bissell St & Armi...|          9.99|         -87.65|              15|           74|Kingsbury St & Er...|       41.89|       -87.64|            23|  08:52:00|09:07:00|2016-05-30|
+|1873704|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:14:00|        20.9|       9.99|cloudy|            141|Clark St & Lincol...|          9.99|         -87.63|              23|           73|Jefferson St & Mo...|       41.88|       -87.64|            19|  08:53:00|09:14:00|2015-05-30|
+|1873706|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.2|       9.99|cloudy|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|  08:53:00|09:01:00|2015-05-30|
+|1873707|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 08:58:00|         4.9|       9.99|cloudy|             47|State St & Kinzie St|          9.99|         -87.63|              19|          100|Orleans St & Merc...|       41.89|       -87.64|            23|  08:53:00|08:58:00|2015-05-30|
+|1873711|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:10:00|        17.5|       9.99|cloudy|             42|Wabash Ave & Cerm...|          9.99|         -87.63|              15|          283|LaSalle St & Jack...|       41.88|       -87.63|            23|  08:53:00|09:10:00|2015-05-30|
+|1873712|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:17:00|        24.1|       9.99|cloudy|            301|Clark St & Schill...|          9.99|         -87.63|              19|          264|Stetson Ave & Sou...|       41.89|       -87.62|            19|  08:53:00|09:17:00|2015-05-30|
+|1873713|2015|    5|  22|  4|   8|Subscriber|Female|2015-05-30 08:53:00|2015-05-30 09:08:00|        15.1|       9.99|cloudy|             29|Noble St & Milwau...|          9.99|         -87.66|              15|          191|Canal St & Monroe St|       41.88|       -87.64|            23|  08:53:00|09:08:00|2015-05-30|
+|1873715|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 08:58:00|         5.3|       9.99|cloudy|             21|Aberdeen St & Jac...|          9.99|         -87.65|              15|          320|Loomis St & Lexin...|       41.87|       -87.66|            15|  08:53:00|08:58:00|2015-05-30|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+
+only showing top 10 rows
+
+>>> dfwithstart_enddate.show(5)
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|start_time|end_time|start_date|  end_date|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+|1873697|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:09:00|        16.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          286|Franklin St & Qui...|       41.88|       -87.63|            23|  08:52:00|09:09:00|2016-05-30|2016-05-30|
+|1873698|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 08:59:00|         6.6|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|  08:52:00|08:59:00|2016-05-30|2016-05-30|
+|1873701|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:07:00|        14.6|       9.99|cloudy|            113|Bissell St & Armi...|          9.99|         -87.65|              15|           74|Kingsbury St & Er...|       41.89|       -87.64|            23|  08:52:00|09:07:00|2016-05-30|2016-05-30|
+|1873704|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:14:00|        20.9|       9.99|cloudy|            141|Clark St & Lincol...|          9.99|         -87.63|              23|           73|Jefferson St & Mo...|       41.88|       -87.64|            19|  08:53:00|09:14:00|2015-05-30|2015-05-30|
+|1873706|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.2|       9.99|cloudy|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|  08:53:00|09:01:00|2015-05-30|2015-05-30|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+only showing top 5 rows
+
+>>> consistentDate = dfwithstart_enddate.filter(col("start_date") >= col("end_date"))
+>>> con_datecnt = consistentDate.count()
+>>> consistentDate.show(5)
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|start_time|end_time|start_date|  end_date|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+|1873697|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:09:00|        16.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          286|Franklin St & Qui...|       41.88|       -87.63|            23|  08:52:00|09:09:00|2016-05-30|2016-05-30|
+|1873698|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 08:59:00|         6.6|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|  08:52:00|08:59:00|2016-05-30|2016-05-30|
+|1873701|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:07:00|        14.6|       9.99|cloudy|            113|Bissell St & Armi...|          9.99|         -87.65|              15|           74|Kingsbury St & Er...|       41.89|       -87.64|            23|  08:52:00|09:07:00|2016-05-30|2016-05-30|
+|1873704|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:14:00|        20.9|       9.99|cloudy|            141|Clark St & Lincol...|          9.99|         -87.63|              23|           73|Jefferson St & Mo...|       41.88|       -87.64|            19|  08:53:00|09:14:00|2015-05-30|2015-05-30|
+|1873706|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.2|       9.99|cloudy|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|  08:53:00|09:01:00|2015-05-30|2015-05-30|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+only showing top 5 rows
+
+>>> finaldf = consistentDate
+>>> finaldf.show(5)
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|start_time|end_time|start_date|  end_date|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+|1873697|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:09:00|        16.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          286|Franklin St & Qui...|       41.88|       -87.63|            23|  08:52:00|09:09:00|2016-05-30|2016-05-30|
+|1873698|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 08:59:00|         6.6|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|  08:52:00|08:59:00|2016-05-30|2016-05-30|
+|1873701|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:07:00|        14.6|       9.99|cloudy|            113|Bissell St & Armi...|          9.99|         -87.65|              15|           74|Kingsbury St & Er...|       41.89|       -87.64|            23|  08:52:00|09:07:00|2016-05-30|2016-05-30|
+|1873704|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:14:00|        20.9|       9.99|cloudy|            141|Clark St & Lincol...|          9.99|         -87.63|              23|           73|Jefferson St & Mo...|       41.88|       -87.64|            19|  08:53:00|09:14:00|2015-05-30|2015-05-30|
+|1873706|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.2|       9.99|cloudy|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|  08:53:00|09:01:00|2015-05-30|2015-05-30|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+only showing top 5 rows
+
+>>> summaryStatistics = finaldf.describe("tripduration", "temperature")
+>>> summaryStatistics.show(5)
++-------+------------------+-----------------+
+|summary|      tripduration|      temperature|
++-------+------------------+-----------------+
+|  count|              1958|             1958|
+|   mean|11.166036776307898|9.989999771118164|
+| stddev| 6.008374815798006|              0.0|
+|    min|               2.0|             9.99|
+|    max|              28.6|             9.99|
++-------+------------------+-----------------+
+
+>>> ProcessedData = finaldf
+>>> ProcessedData.show(5)
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature|events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|start_time|end_time|start_date|  end_date|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+|1873697|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:09:00|        16.5|       9.99|cloudy|             48|Larrabee St & Kin...|          9.99|         -87.64|              27|          286|Franklin St & Qui...|       41.88|       -87.63|            23|  08:52:00|09:09:00|2016-05-30|2016-05-30|
+|1873698|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 08:59:00|         6.6|       9.99|cloudy|            134|Peoria St & Jacks...|          9.99|         -87.65|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|  08:52:00|08:59:00|2016-05-30|2016-05-30|
+|1873701|2016|    5|  22|  4|   8|Subscriber|  Male|2016-05-30 08:52:00|2016-05-30 09:07:00|        14.6|       9.99|cloudy|            113|Bissell St & Armi...|          9.99|         -87.65|              15|           74|Kingsbury St & Er...|       41.89|       -87.64|            23|  08:52:00|09:07:00|2016-05-30|2016-05-30|
+|1873704|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:14:00|        20.9|       9.99|cloudy|            141|Clark St & Lincol...|          9.99|         -87.63|              23|           73|Jefferson St & Mo...|       41.88|       -87.64|            19|  08:53:00|09:14:00|2015-05-30|2015-05-30|
+|1873706|2015|    5|  22|  4|   8|Subscriber|  Male|2015-05-30 08:53:00|2015-05-30 09:01:00|         8.2|       9.99|cloudy|            100|Orleans St & Merc...|          9.99|         -87.64|              23|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|  08:53:00|09:01:00|2015-05-30|2015-05-30|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+
+only showing top 5 rows
+
+>>>top_pickup_locations= ProcessedData1.groupBy("from_station_name").count() \
+    .withColumnRenamed("count", "pickup_count") \
+    .orderBy(col("pickup_count").desc()) \
+    .limit(10)
+>>> top_pickup_locations.show()
++--------------------+------------+
+|   from_station_name|pickup_count|
++--------------------+------------+
+|Clinton St & Wash...|          76|
+|Canal St & Madiso...|          40|
+| Canal St & Adams St|          39|
+|Canal St & Jackso...|          33|
+|Franklin St & Arc...|          27|
+|Clinton St & Madi...|          24|
+|Dearborn St & Mon...|          23|
+|Orleans St & Merc...|          23|
+|Columbus Dr & Ran...|          22|
+|Peoria St & Jacks...|          22|
++--------------------+------------+
+>>>from pyspark.sql.functions import asin, sqrt, sin, cos, col
+>>>R = 6371.0
+>>>ProcessedData1 = ProcessedData1.withColumn("lat1", radians(ProcessedData1["latitude_start"]))
+>>>ProcessedData1 = ProcessedData1.withColumn("lon1", radians(ProcessedData1["longitude_start"]))
+>>>ProcessedData1 = ProcessedData1.withColumn("lat2", radians(ProcessedData1["latitude_end"]))
+>>>ProcessedData1 = ProcessedData1.withColumn("lon2", radians(ProcessedData1["longitude_end"]))
+>>>ProcessedData1 = ProcessedData1.withColumn("dlat", ProcessedData1["lat2"] - ProcessedData1["lat1"])
+>>>ProcessedData1 = ProcessedData1.withColumn("dlon", ProcessedData1["lon2"] - ProcessedData1["lon1"])
+>>>ProcessedData = ProcessedData1.withColumn(
+    "trip_distance",
+    2.0 * R * asin(sqrt(
+            (sin(ProcessedData1["dlat"] / 2.0) ** 2 + cos(ProcessedData1["lat1"]) * cos(ProcessedData1["lat2"]) * sin(ProcessedData1["dlon"] / 2.0) ** 2))))
+>>>ProcessedData.show()
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+-------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+------------------+-------------------+------------------+-------------------+--------------------+--------------------+------------------+
+|trip_id|year|month|week|day|hour|  usertype|gender|          starttime|           stoptime|tripduration|temperature| events|from_station_id|   from_station_name|latitude_start|longitude_start|dpcapacity_start|to_station_id|     to_station_name|latitude_end|longitude_end|dpcapacity_end|start_time|end_time|start_date|  end_date|              lat1|               lon1|              lat2|               lon2|                dlat|                dlon|     trip_distance|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+-------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+------------------+-------------------+------------------+-------------------+--------------------+--------------------+------------------+
+|2355130|2014|    6|  27|  0|  23|Subscriber|  Male|2014-06-30 23:33:00|2014-06-30 23:35:00|         2.1|         68|tstorms|            327|Sheffield Ave & W...|         41.92|         -87.65|              19|          225|Halsted St & Dick...|       41.92|       -87.65|            15|  23:33:00|23:35:00|2014-06-30|2014-06-30|0.7316420224360229|  -1.52978108937303|0.7316420224360229|  -1.52978108937303|                 0.0|                 0.0|               0.0|
+|1875964|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:27:00|2014-05-30 12:40:00|        13.7|       78.1|  clear|            287|Franklin St & Arc...|         41.88|         -87.64|              27|           26|McClurg Ct & Illi...|       41.89|       -87.62|            31|  12:27:00|12:40:00|2014-05-30|2014-05-30|0.7309438907352253|-1.5296065564478303|0.7311184236604247|-1.5292574905974317|1.745329251994221E-4|3.490658503986221...| 1.994404220506427|
+|1875963|2014|    5|  22|  4|  12|Subscriber|Female|2014-05-30 12:26:00|2014-05-30 12:43:00|        16.9|       78.1|  clear|            140|Dearborn Pkwy & D...|          41.9|         -87.63|              19|          195|Columbus Dr & Ran...|       41.88|       -87.62|            31|  12:26:00|12:43:00|2014-05-30|2014-05-30|0.7312929565856241|-1.5294320235226309|0.7309438907352253|-1.5292574905974317|-3.49065850398844...|1.745329251992000...|2.3729563127541224|
+|1875961|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:27:00|2014-05-30 12:32:00|         5.9|       78.1|  clear|            138|Clybourn Ave & Di...|          41.9|         -87.64|              15|           46|Wells St & Walton St|        41.9|       -87.63|            19|  12:27:00|12:32:00|2014-05-30|2014-05-30|0.7312929565856241|-1.5296065564478303|0.7312929565856241|-1.5294320235226309|                 0.0|1.745329251994221E-4|0.8276366773701515|
+|1875959|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:26:00|2014-05-30 12:29:00|         3.0|       78.1|  clear|            181|LaSalle St & Illi...|         41.89|         -87.63|              31|          199|Wabash Ave & Gran...|       41.89|       -87.63|            15|  12:26:00|12:29:00|2014-05-30|2014-05-30|0.7311184236604247|-1.5294320235226309|0.7311184236604247|-1.5294320235226309|                 0.0|                 0.0|               0.0|
+|1875957|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:23:00|2014-05-30 12:26:00|         3.3|       78.1|  clear|            134|Peoria St & Jacks...|         41.88|         -87.65|              19|          112|Green St & Randol...|       41.88|       -87.65|            15|  12:23:00|12:26:00|2014-05-30|2014-05-30|0.7309438907352253|  -1.52978108937303|0.7309438907352253|  -1.52978108937303|                 0.0|                 0.0|               0.0|
+|1875956|2014|    5|  22|  4|  12|Subscriber|Female|2014-05-30 12:26:00|2014-05-30 12:31:00|         4.9|       78.1|  clear|            192| Canal St & Adams St|         41.88|         -87.64|              39|           49|Dearborn St & Mon...|       41.88|       -87.63|            27|  12:26:00|12:31:00|2014-05-30|2014-05-30|0.7309438907352253|-1.5296065564478303|0.7309438907352253|-1.5294320235226309|                 0.0|1.745329251994221E-4| 0.827895841818971|
+|1875954|2014|    5|  22|  4|  12|Subscriber|Female|2014-05-30 12:26:00|2014-05-30 12:43:00|        17.3|       78.1|  clear|            314|Ravenswood Ave & ...|         41.96|         -87.67|              15|          249|     Montrose Harbor|       41.96|       -87.64|            15|  12:26:00|12:43:00|2014-05-30|2014-05-30|0.7323401541368206|-1.5301301552234288|0.7323401541368206|-1.5296065564478303|                 0.0|5.235987755984883E-4|2.4805757259810433|
+|1875949|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:26:00|2014-05-30 12:33:00|         7.6|       78.1|  clear|            197|Michigan Ave & Ma...|         41.88|         -87.63|              19|           36|Franklin St & Jac...|       41.88|       -87.64|            31|  12:26:00|12:33:00|2014-05-30|2014-05-30|0.7309438907352253|-1.5294320235226309|0.7309438907352253|-1.5296065564478303|                 0.0|-1.74532925199422...| 0.827895841818971|
+|1875947|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:26:00|2014-05-30 12:29:00|         3.8|       78.1|  clear|             31|Franklin St & Chi...|          41.9|         -87.64|              23|           48|Larrabee St & Kin...|        41.9|       -87.64|            27|  12:26:00|12:29:00|2014-05-30|2014-05-30|0.7312929565856241|-1.5296065564478303|0.7312929565856241|-1.5296065564478303|                 0.0|                 0.0|               0.0|
+|1875943|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:24:00|2014-05-30 12:38:00|        13.8|       78.1|  clear|             69|Damen Ave & Pierc...|         41.91|         -87.68|              19|          331|Halsted St & Blac...|       41.91|       -87.65|            19|  12:24:00|12:38:00|2014-05-30|2014-05-30|0.7314674895108234|-1.5303046881486282|0.7314674895108234|  -1.52978108937303|                 0.0|5.235987755982663E-4| 2.482521160733817|
+|1875942|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:25:00|2014-05-30 12:28:00|         3.3|       78.1|  clear|            241| Morgan St & Polk St|         41.87|         -87.65|              15|           32|Racine Ave & Cong...|       41.87|       -87.66|            19|  12:25:00|12:28:00|2014-05-30|2014-05-30|0.7307693578100257|  -1.52978108937303|0.7307693578100257|-1.5299556222982291|                 0.0|-1.74532925199200...|0.8280253862155766|
+|1875939|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:25:00|2014-05-30 12:39:00|        14.4|       78.1|  clear|             56|Desplaines St & K...|         41.89|         -87.64|              19|           84|Green St & Milwau...|       41.89|       -87.65|            19|  12:25:00|12:39:00|2014-05-30|2014-05-30|0.7311184236604247|-1.5296065564478303|0.7311184236604247|  -1.52978108937303|                 0.0|-1.74532925199644...|0.8277662722032156|
+|1875938|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:25:00|2014-05-30 12:39:00|        13.6|       78.1|  clear|            304|Halsted St & Wave...|         41.95|         -87.65|              15|          296|Broadway & Belmon...|       41.94|       -87.65|            15|  12:25:00|12:39:00|2014-05-30|2014-05-30|0.7321656212116213|  -1.52978108937303|0.7319910882864218|  -1.52978108937303|-1.74532925199533...|                 0.0|1.1119492664462256|
+|1875935|2014|    5|  22|  4|  12|Subscriber|Female|2014-05-30 12:25:00|2014-05-30 12:34:00|         9.1|       78.1|  clear|             73|Jefferson St & Mo...|         41.88|         -87.64|              19|           66|Clinton St & Lake St|       41.89|       -87.64|            19|  12:25:00|12:34:00|2014-05-30|2014-05-30|0.7309438907352253|-1.5296065564478303|0.7311184236604247|-1.5296065564478303|1.745329251994221E-4|                 0.0|1.1119492664455182|
+|1875934|2014|    5|  22|  4|  12|Subscriber|Female|2014-05-30 12:24:00|2014-05-30 12:49:00|        24.2|       78.1|  clear|            131|Lincoln Ave & Bel...|         41.94|         -87.67|              15|          188|Greenview Ave & F...|       41.93|       -87.67|            15|  12:24:00|12:49:00|2014-05-30|2014-05-30|0.7319910882864218|-1.5301301552234288|0.7318165553612224|-1.5301301552234288|-1.74532925199422...|                 0.0|1.1119492664455182|
+|1875933|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:24:00|2014-05-30 12:39:00|        14.7|       78.1|  clear|             47|State St & Kinzie St|         41.89|         -87.63|              19|          199|Wabash Ave & Gran...|       41.89|       -87.63|            15|  12:24:00|12:39:00|2014-05-30|2014-05-30|0.7311184236604247|-1.5294320235226309|0.7311184236604247|-1.5294320235226309|                 0.0|                 0.0|               0.0|
+|1875932|2014|    5|  22|  4|  12|Subscriber|Female|2014-05-30 12:24:00|2014-05-30 12:51:00|        27.0|       78.1|  clear|             17|Wood St & Divisio...|          41.9|         -87.67|              15|          197|Michigan Ave & Ma...|       41.88|       -87.63|            19|  12:24:00|12:51:00|2014-05-30|2014-05-30|0.7312929565856241|-1.5301301552234288|0.7309438907352253|-1.5294320235226309|-3.49065850398844...|6.981317007979104E-4|3.9885932533710413|
+|1875920|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:24:00|2014-05-30 12:34:00|        10.3|       78.1|  clear|            273|Michigan Ave & 18...|         41.86|         -87.62|              15|           50|Clark St & Congre...|       41.88|       -87.63|            27|  12:24:00|12:34:00|2014-05-30|2014-05-30|0.7305948248848263|-1.5292574905974317|0.7309438907352253|-1.5294320235226309|3.490658503989552E-4|-1.74532925199200...| 2.373046712788274|
+|1875915|2014|    5|  22|  4|  12|Subscriber|  Male|2014-05-30 12:24:00|2014-05-30 12:52:00|        28.1|       78.1|  clear|             81|  Daley Center Plaza|         41.88|         -87.63|              39|           44|State St & Randol...|       41.88|       -87.63|            27|  12:24:00|12:52:00|2014-05-30|2014-05-30|0.7309438907352253|-1.5294320235226309|0.7309438907352253|-1.5294320235226309|                 0.0|                 0.0|               0.0|
++-------+----+-----+----+---+----+----------+------+-------------------+-------------------+------------+-----------+-------+---------------+--------------------+--------------+---------------+----------------+-------------+--------------------+------------+-------------+--------------+----------+--------+----------+----------+------------------+-------------------+------------------+-------------------+--------------------+--------------------+------------------+
+only showing top 20 rows
+>>> ProcessedData.write.mode("overwrite").option("header",True).csv("hdfs://localhost:9000/final_bikedata.csv")
+>>>
