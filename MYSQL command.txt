@@ -1,0 +1,58 @@
+lahasya@DESKTOP-0B2K82C:~$ sudo su - hadoop
+[sudo] password for lahasya:
+hadoop@DESKTOP-0B2K82C:~$ mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.34-0ubuntu0.22.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| hue                |
+| metastore          |
+| movielens          |
+| mysql              |
+| test               |
+| training           |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> CREATE DATABASE Bikesharing;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use Bikesharing;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+mysql> CREATE TABLE BikeData (trip_id int(8) primary key,year int(4),month int(1),week int(3),day int(2),hour int(3),usertype char(20),gender char(10),starttime TIMESTAMP,stoptime TIMESTAMP,tripduration decimal(4,2),temperature decimal(3,2),events char(10),from_station_id int(6),from_station_name char(50),latitude_start decimal(3,2),longitude_start decimal(4,2),dpcapacity_start int(5),to_station_id int(5),to_station_name char(50),latitude_end decimal(4,2),longitude_end decimal(4,2),dpcapacity_end int(4));
+Query OK, 0 rows affected (0.01 sec)
+
+Database changed
+mysql>  LOAD DATA LOCAL INFILE '/home/hadoop/bikesharing_data.csv' INTO TABLE BikeData FIELDS TERMINATED BY ',' LINES TERMINATED BY '\r\n' IGNORE 1 LINES(trip_id,year,month,week,day,hour,usertype,gender,starttime,stoptime,tripduration,temperature,events,from_station_id,from_station_name,latitude_start,longitude_start,dpcapacity_start,to_station_id,to_station_name,latitude_end,longitude_end,dpcapacity_end);
+Query OK, 1999 rows affected, 3998 warnings (0.22 sec)
+Records: 1999  Deleted: 0  Skipped: 0  Warnings: 3998
+
+mysql> select * from BikeData limit 5;
++---------+------+-------+------+------+------+------------+--------+---------------------+---------------------+--------------+-------------+--------+-----------------+-------------------------------------+----------------+-----------------+------------------+---------------+---------------------------+--------------+---------------+----------------+
+| trip_id | year | month | week | day  | hour | usertype   | gender | starttime           | stoptime            | tripduration | temperature | events | from_station_id | from_station_name                   | latitude_start | longitude_start | dpcapacity_start | to_station_id | to_station_name           | latitude_end | longitude_end | dpcapacity_end |
++---------+------+-------+------+------+------+------------+--------+---------------------+---------------------+--------------+-------------+--------+-----------------+-------------------------------------+----------------+-----------------+------------------+---------------+---------------------------+--------------+---------------+----------------+
+| 1873697 | 2016 |     5 |   22 |    4 |    8 | Subscriber | Male   | 2016-05-30 08:52:00 | 2016-05-30 09:09:00 |        16.50 |        9.99 | cloudy |              48 | Larrabee St & Kingsbury St          |           9.99 |          -87.64 |               27 |           286 | Franklin St & Quincy St   |        41.88 |        -87.63 |             23 |
+| 1873698 | 2016 |     5 |   22 |    4 |    8 | Subscriber | Male   | 2016-05-30 08:52:00 | 2016-05-30 08:59:00 |         6.60 |        9.99 | cloudy |             134 | Peoria St & Jackson Blvd            |           9.99 |          -87.65 |               19 |            66 | Clinton St & Lake St      |        41.89 |        -87.64 |             19 |
+| 1873701 | 2016 |     5 |   22 |    4 |    8 | Subscriber | Male   | 2016-05-30 08:52:00 | 2016-05-30 09:07:00 |        14.60 |        9.99 | cloudy |             113 | Bissell St & Armitage Ave           |           9.99 |          -87.65 |               15 |            74 | Kingsbury St & Erie St    |        41.89 |        -87.64 |             23 |
+| 1873704 | 2015 |     5 |   22 |    4 |    8 | Subscriber | Male   | 2015-05-30 08:53:00 | 2015-05-30 09:14:00 |        20.90 |        9.99 | cloudy |             141 | Clark St & Lincoln Ave              |           9.99 |          -87.63 |               23 |            73 | Jefferson St & Monroe St  |        41.88 |        -87.64 |             19 |
+| 1873706 | 2015 |     5 |   22 |    4 |    8 | Subscriber | Male   | 2015-05-30 08:53:00 | 2015-05-30 09:01:00 |         8.20 |        9.99 | cloudy |             100 | Orleans St & Merchandise Mart Plaza |           9.99 |          -87.64 |               23 |           195 | Columbus Dr & Randolph St |        41.88 |        -87.62 |             31 |
++---------+------+-------+------+------+------+------------+--------+---------------------+---------------------+--------------+-------------+--------+-----------------+-------------------------------------+----------------+-----------------+------------------+---------------+---------------------------+--------------+---------------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> exit;
+Bye
