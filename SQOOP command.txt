@@ -1,0 +1,100 @@
+hadoop@DESKTOP-0B2K82C:~$ sqoop import --connect jdbc:mysql://localhost/Bikesharing   --username root --password Lahasya@123456789   --table BikeData --m 1   --map-column-hive trip_id=trip_id,year=year,month=month,week=week,day=day,hour=hour,usertype=usertype,gender=gender,starttime=starttime,stoptime=stoptime,tripduration=tripduration,temperature=temperature,events=events,from_station_id=from_station_id,from_station_name=from_station_name,latitude_start=latitude_start,longitude_start=longitude_start,dpcapacity_start=dpcapacity_start,to_station_id=to_station_id,to_station_name=to_station_name,latitude_end=latitude_end,longitude_end=longitude_end,dpcapacity_end=dpcapacity_end --target-dir /user/hadoop/BikeData
+Warning: /home/hadoop/sqoop/../hbase does not exist! HBase imports will fail.
+Please set $HBASE_HOME to the root of your HBase installation.
+Warning: /home/hadoop/sqoop/../hcatalog does not exist! HCatalog jobs will fail.
+Please set $HCAT_HOME to the root of your HCatalog installation.
+Warning: /home/hadoop/sqoop/../accumulo does not exist! Accumulo imports will fail.
+Please set $ACCUMULO_HOME to the root of your Accumulo installation.
+Warning: /home/hadoop/sqoop/../zookeeper does not exist! Accumulo imports will fail.
+Please set $ZOOKEEPER_HOME to the root of your Zookeeper installation.
+2023-09-22 14:05:03,861 INFO sqoop.Sqoop: Running Sqoop version: 1.4.7
+2023-09-22 14:05:03,887 WARN tool.BaseSqoopTool: Setting your password on the command-line is insecure. Consider using -P instead.
+2023-09-22 14:05:03,893 WARN tool.BaseSqoopTool: It seems that you've specified at least one of following:
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool:        --hive-home
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool:        --hive-overwrite
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool:        --create-hive-table
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool:        --hive-table
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool:        --hive-partition-key
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool:        --hive-partition-value
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool:        --map-column-hive
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool: Without specifying parameter --hive-import. Please note that
+2023-09-22 14:05:03,894 WARN tool.BaseSqoopTool: those arguments will not be used in this session. Either
+2023-09-22 14:05:03,895 WARN tool.BaseSqoopTool: specify --hive-import to apply them correctly or remove them
+2023-09-22 14:05:03,895 WARN tool.BaseSqoopTool: from command line to remove this warning.
+2023-09-22 14:05:03,895 INFO tool.BaseSqoopTool: Please note that --hive-home, --hive-partition-key,
+2023-09-22 14:05:03,895 INFO tool.BaseSqoopTool:         hive-partition-value and --map-column-hive options are
+2023-09-22 14:05:03,895 INFO tool.BaseSqoopTool:         are also valid for HCatalog imports and exports
+2023-09-22 14:05:04,059 INFO manager.MySQLManager: Preparing to use a MySQL streaming resultset.
+2023-09-22 14:05:04,060 INFO tool.CodeGenTool: Beginning code generation
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+2023-09-22 14:05:04,646 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `BikeData` AS t LIMIT 1
+2023-09-22 14:05:04,744 INFO manager.SqlManager: Executing SQL statement: SELECT t.* FROM `BikeData` AS t LIMIT 1
+2023-09-22 14:05:04,756 INFO orm.CompilationManager: HADOOP_MAPRED_HOME is /home/hadoop/hadoop
+Note: /tmp/sqoop-hadoop/compile/e55193cb093fdba09795c775821fe1f9/BikeData.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+2023-09-22 14:05:06,574 INFO orm.CompilationManager: Writing jar file: /tmp/sqoop-hadoop/compile/e55193cb093fdba09795c775821fe1f9/BikeData.jar
+2023-09-22 14:05:06,631 WARN manager.MySQLManager: It looks like you are importing from mysql.
+2023-09-22 14:05:06,631 WARN manager.MySQLManager: This transfer can be faster! Use the --direct
+2023-09-22 14:05:06,631 WARN manager.MySQLManager: option to exercise a MySQL-specific fast path.
+2023-09-22 14:05:06,632 INFO manager.MySQLManager: Setting zero DATETIME behavior to convertToNull (mysql)
+2023-09-22 14:05:06,638 INFO mapreduce.ImportJobBase: Beginning import of BikeData
+2023-09-22 14:05:06,639 INFO Configuration.deprecation: mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+2023-09-22 14:05:06,809 INFO Configuration.deprecation: mapred.jar is deprecated. Instead, use mapreduce.job.jar
+2023-09-22 14:05:07,369 INFO Configuration.deprecation: mapred.map.tasks is deprecated. Instead, use mapreduce.job.maps
+2023-09-22 14:05:07,536 INFO client.DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at /0.0.0.0:8032
+2023-09-22 14:05:08,128 INFO mapreduce.JobResourceUploader: Disabling Erasure Coding for path: /tmp/hadoop-yarn/staging/hadoop/.staging/job_1695369107114_0002
+2023-09-22 14:05:14,321 INFO db.DBInputFormat: Using read commited transaction isolation
+2023-09-22 14:05:14,422 INFO mapreduce.JobSubmitter: number of splits:1
+2023-09-22 14:05:14,597 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1695369107114_0002
+2023-09-22 14:05:14,597 INFO mapreduce.JobSubmitter: Executing with tokens: []
+2023-09-22 14:05:14,993 INFO conf.Configuration: resource-types.xml not found
+2023-09-22 14:05:14,993 INFO resource.ResourceUtils: Unable to find 'resource-types.xml'.
+2023-09-22 14:05:15,142 INFO impl.YarnClientImpl: Submitted application application_1695369107114_0002
+2023-09-22 14:05:15,235 INFO mapreduce.Job: The url to track the job: http://DESKTOP-0B2K82C.:8088/proxy/application_1695369107114_0002/
+2023-09-22 14:05:15,237 INFO mapreduce.Job: Running job: job_1695369107114_0002
+2023-09-22 14:05:24,410 INFO mapreduce.Job: Job job_1695369107114_0002 running in uber mode : false
+2023-09-22 14:05:24,412 INFO mapreduce.Job:  map 0% reduce 0%
+2023-09-22 14:05:31,531 INFO mapreduce.Job:  map 100% reduce 0%
+2023-09-22 14:05:32,547 INFO mapreduce.Job: Job job_1695369107114_0002 completed successfully
+2023-09-22 14:05:32,660 INFO mapreduce.Job: Counters: 33
+        File System Counters
+                FILE: Number of bytes read=0
+                FILE: Number of bytes written=285920
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=87
+                HDFS: Number of bytes written=374133
+                HDFS: Number of read operations=6
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+                HDFS: Number of bytes read erasure-coded=0
+        Job Counters
+                Launched map tasks=1
+                Other local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=5024
+                Total time spent by all reduces in occupied slots (ms)=0
+                Total time spent by all map tasks (ms)=5024
+                Total vcore-milliseconds taken by all map tasks=5024
+                Total megabyte-milliseconds taken by all map tasks=5144576
+        Map-Reduce Framework
+                Map input records=1999
+                Map output records=1999
+                Input split bytes=87
+                Spilled Records=0
+                Failed Shuffles=0
+                Merged Map outputs=0
+                GC time elapsed (ms)=200
+                CPU time spent (ms)=2920
+                Physical memory (bytes) snapshot=277745664
+                Virtual memory (bytes) snapshot=2559660032
+                Total committed heap usage (bytes)=174063616
+                Peak Map Physical memory (bytes)=277745664
+                Peak Map Virtual memory (bytes)=2559660032
+        File Input Format Counters
+                Bytes Read=0
+        File Output Format Counters
+                Bytes Written=374133
+2023-09-22 14:05:32,672 INFO mapreduce.ImportJobBase: Transferred 365.3643 KB in 25.2876 seconds (14.4484 KB/sec)
+2023-09-22 14:05:32,676 INFO mapreduce.ImportJobBase: Retrieved 1999 records.
+hadoop@DESKTOP-0B2K82C:~$
